@@ -722,7 +722,7 @@ q:after {
   max-width: 100%;
   height: auto;
   margin: 0;
-  padding: 20px;
+  padding: 25px;
   background-color: transparent;
   z-index: 2001;
   -webkit-transform: translateY(0);
@@ -775,6 +775,9 @@ q:after {
         margin-left: 19px; }
     .nav-primary a.selected {
       color: #19ab6a; }
+  .nav-primary .btn {
+    margin: 0;
+    margin-left: 15px; }
 
 @media (min-width: 62.4375rem) {
   .nav-mobile,
@@ -1018,7 +1021,7 @@ body.nav-open {
   .btn.rounded {
     border-radius: 100px; }
   .btn.sm {
-    padding: 10px; }
+    padding: 8px; }
   .btn.md {
     padding: 20px; }
   .btn.lg {
