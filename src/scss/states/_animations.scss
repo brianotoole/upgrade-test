@@ -1,0 +1,9 @@
+// Animations
+
+@keyframes fadeInLeft { 
+  from { opacity: 0; transform: translateX(-7px); } 
+  to { opacity: 1; transform: translateX(0); } 
+}
+.fadeInLeft {
+  animation: fadeIn 0.9s ease-out;
+}

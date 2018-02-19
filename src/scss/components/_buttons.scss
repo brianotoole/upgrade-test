@@ -1,0 +1,72 @@
+// Buttons
+@mixin button-bg($bg) {
+  background-color: $bg;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: darken($bg,8%);
+    color: $color-white;
+    transition: 0.2s all ease-out;
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin: 0;
+  margin-top: 5px;
+  min-width: 225px;
+  padding: 12px 20px;
+  font-family: $font-heading;
+  font-size: rem(16);
+  font-weight: bold;
+  color: $color-white;
+  background-color: $color-primary;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  vertical-align: middle;
+  white-space: nowrap;
+  &.primary {
+    @include button-bg($color-primary);
+  }
+  &.secondary {
+    @include button-bg($color-secondary);
+  }
+  &.white {
+    @include button-bg($color-white);
+    color: $color-primary;
+  }
+  &.muted {
+    background-color: transparent;
+    color: $color-secondary;
+    border: 2px solid $color-gray;
+    text-transform: capitalize;
+    transition: 0.2s border ease-out, 0.2s background ease-out;
+    &:hover {
+      background-color: $color-gray;
+      color: $color-secondary-dark;
+      border-color: $color-secondary;
+    }
+  }
+  &.rounded {
+    border-radius: 100px;
+  }
+  &.sm {
+    padding: 10px;
+  }
+  &.md {
+    padding: 20px;
+  }
+  &.lg {
+    padding: 30px;
+  }
+  &.block {
+    display: block;
+    max-width: 100%;
+  }
+  &.inline {
+    display: inline;
+  }
+}

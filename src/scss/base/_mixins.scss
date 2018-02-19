@@ -1,0 +1,47 @@
+// MIXINS
+// Convert PX to REM
+// Usage: 
+// .class {font-size: rem(20)};
+$baseFontSize: 16;
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+// Media query mixin
+// Usage:
+// @include for-size(phone-only) {
+//    padding: 20px;
+//  }
+@mixin for-size($size) {
+  @if $size==phone-only {
+    @media (max-width: rem(599)) {
+      @content;
+    }
+  }
+  @else if $size==tablet-portrait-up {
+    @media (min-width: rem(600)) {
+      @content;
+    }
+  }
+  @else if $size==tablet-landscape-up {
+    @media (min-width: rem(900)) {
+      @content;
+    }
+  }
+  @else if $size==desktop-up {
+    @media (min-width: rem(1200)) {
+      @content;
+    }
+  }
+  @else if $size==big-desktop-up {
+    @media (min-width: rem(1800)) {
+      @content;
+    }
+  }
+}

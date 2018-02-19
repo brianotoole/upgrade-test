@@ -1,0 +1,220 @@
+// Header
+/*.home .header {
+  background-color: transparent;
+}*/
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 20px;
+  background-color: transparent;
+  z-index: 2001;
+  transform: translateY(0);
+  transition: background 0.2s ease-in;
+  @media (max-width: $bp-md) {
+    background-color: $color-white;
+  }
+  &.is-fixed {
+    position: fixed;
+  }
+}
+
+// Logo
+.logo {
+  a {
+    color: $color-black;
+  }
+  img {
+    margin: 0;
+    width: 100%;
+    max-width: 175px;
+  }
+}
+
+// Nav primary
+.nav-primary {
+  display: none;
+  margin: 0;
+  margin-top: 6px;
+  padding: 0;
+  list-style-type: none;
+  @media (min-width: $bp-md) {
+    display: flex;
+    justify-content: flex-end;
+  }
+  li {
+    flex: 0 0 auto;
+  }
+  a {
+    margin: 0 20px;
+    color: $color-secondary;
+    font-size: rem(16);
+    font-weight: bold;
+    transition: 0.2s color ease-out;
+    &:hover {
+      text-decoration: none;
+      color: $color-primary;
+    }
+    &.has-nav-line {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 15px;
+        background: $color-gray;
+        margin-top: 4px;
+        margin-left: 19px;
+      }
+    }
+    &.selected {
+      color: $color-primary;
+    }
+  }
+}
+
+// Nav mobile
+.nav-mobile,
+.nav-toggle {
+  @media (min-width: $bp-md) {
+    display: none;
+  }
+}
+
+// Nav mobile wrapper
+.nav-mobile {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  background: $color-secondary;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  padding-top: 120px; //make "x" clickable at top of nav
+  z-index: -1;
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s, ease-out 0.3s;
+  will-change: transform;
+  &.nav-open {
+    opacity: 1;
+    overflow-y: scroll;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+body.nav-open {
+  position: fixed;
+  overflow-y: hidden;
+  .line {
+    background: $color-white;
+  }
+}
+
+.nav-mobile-wrap {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    opacity: 0;
+  }
+  $faster: 9ms;
+    @for $index from 1 through 8 {
+      li.active:nth-child(#{$index}) {
+        animation: fadeInLeft 250ms ease-out;
+        animation-delay: (250ms - ($faster * $index)) * $index;
+        animation-duration: 250ms;
+        animation-fill-mode: forwards;
+      }
+    }
+  a,
+  .btn.muted {
+    display: block;
+    padding: 10px 0;
+    color: $color-white;
+    border: none;
+    margin: 0;
+    font-weight: bold;
+    font-size: rem(20);
+    text-align: center;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      background: none;
+      color: $color-primary;
+      outline: 0;
+    }
+  }
+}
+
+// nav toggle
+$bar-width: 40px;
+$bar-height: 5px;
+$bar-spacing: 10px;
+$height-icon: 20px;
+$width-line: 35px;
+$height-line: 3px;
+$transition-time: 0.25s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;
+.nav-toggle {
+  width: $width-line;
+  height: $height-icon;
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 9999;
+  @include for-size(phone-only) {
+    top: 26px;
+  }
+  .line {
+    display: block;
+    position: absolute;
+    right: 0;
+    background: $color-black;
+    width: $width-line;
+    height: $height-line;
+    transition: all $transition-time;
+    &.line-1 {
+      top: 0;
+    }
+    &.line-2 {
+      top: 50%;
+      width: ($width-line / 1.2);
+    }
+    &.line-3 {
+      top: 100%;
+    }
+  }
+  &:hover,
+  &:focus {
+    .line-1 {
+      transform: translateY($height-line / 2 * -1);
+    }
+    .line-3 {
+      transform: translateY($height-line / 2);
+    }
+  }
+  &.active {
+    .line-1 {
+      transform: translateY($translateY) translateX($translateX) rotate($rotation);
+    }
+    .line-2 {
+      opacity: 0;
+    }
+    .line-3 {
+      transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+// Variables
+// Colors: Brand
+$color-primary: #19ab6a; // green
+$color-secondary: #3f465d; //dark gray
+$color-tertiary: #6bbfff; // light blue
+
+// Colors: Brand-Darkens
+$color-primary-dark: darken($color-primary, 10%);
+$color-secondary-dark: darken($color-secondary, 10%);
+$color-tertiary-dark: darken($color-tertiary, 10%);
+
+// Colors: Generic
+$color-body: $color-secondary;
+$color-black: #111;
+$color-white: #fff;
+$color-gray: #dbd8d6;
+$color-gray-light: #eee;
+
+// Colors: Components
+$color-link: $color-secondary;
+$color-link-dark: darken($color-primary-dark, 10%);
+$color-border: rgba($color-gray, 0.1);
+$color-border-dark: darken($color-border, 10%);
+$color-border-light: rgba($color-white, 0.1);
+$color-success: #377f31; // Green
+$color-error: #880e14; // Red
+$color-warning: #dba909; // Yellow
+$color-code: #dd1144;
+
+// Font Stacks
+$font-heading: "Helvetica", sans-serif; //headings
+$font-body: "Helvetica", sans-serif; //body
+$font-monospace: Menlo, Monaco, monospace;
+// Breakpoints, using rems
+// #size % 16(default body font-size) == xrem (or, 320%16 == 20)
+
+$bp-xs: 20rem; //320
+$bp-sm: 30rem; //480
+$bp-md: 62.4375rem; //999
+$bp-lg: 64rem; //1024
+$bp-xl: 80rem; //1280
+$bp-xxl: 90rem; //1440
+
+// Sizing
+$font-size-body: 100%; //uses a relative size: changing will adjust scale of site

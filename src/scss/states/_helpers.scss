@@ -1,0 +1,202 @@
+// Helpers
+// Colors: text
+.text-white {
+  color: $color-white
+}
+
+.text-primary {
+  color: $color-primary
+}
+
+.text-secondary {
+  color: $color-secondary
+}
+
+.text-body {
+  color: $color-body
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Colors: background
+.bg-white {
+  background: $color-white;
+  color: $color-body;
+}
+
+.bg-primary {
+  background: $color-primary;
+  color: $color-white;
+}
+
+.bg-secondary {
+  background: $color-secondary;
+  color: $color-body;
+}
+
+.bg-gray {
+  background: $color-gray;
+  color: $color-body;
+}
+
+.bg-black {
+  background: $color-black;
+  color: $color-white;
+}
+
+// Images: background
+.bg-img-cover {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center center;
+  &.has-overlay {
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba($color-secondary, 0.9);
+      z-index: -1;
+    }
+  }
+}
+
+// Rules & Borders
+.hr {
+  border-color: $color-black;
+  border-top-width: 2px; //hr-colors
+  &.hr-light {
+    border-color: $color-white;
+  } //hr-sizes
+  &.hr-small {
+    width: 50px;
+  } //hr-position
+  &.hr-left {
+    @media (min-width: $bp-md) {
+      margin-left: 0;
+    }
+  }
+}
+
+.border-bottom {
+  border-bottom: 2px solid $color-border;
+}
+
+// Layouts
+.full-height {
+  height: 100vh;
+}
+
+.vertical-center {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.padded {
+  padding: 15px;
+}
+
+.pad-top {
+  padding-top: 30px;
+}
+
+.pad-top-phone {
+  @include for-size(phone-only) {
+    padding-top: 30px;
+  }
+}
+
+.pad-btm {
+  padding-bottom: 30px;
+}
+
+.pad-btm-phone {
+  @include for-size(phone-only) {
+    padding-bottom: 30px;
+  }
+}
+
+.no-pad {
+  padding: 0;
+}
+
+.no-pad-l {
+  padding-left: 0;
+}
+
+.no-pad-r {
+  padding-right: 0;
+}
+
+.no-pad-t {
+  padding-top: 0;
+}
+
+.no-pad-b {
+  padding-bottom: 0;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.no-underline {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+// Visibility
+.hidden-phone {
+  @include for-size(phone-only) {
+    display: none !important;
+  }
+}
+
+.visible-phone {
+  display: none;
+  @include for-size(phone-only) {
+    display: block !important;
+  }
+}
+
+// Shapes, Misc.
+// arrow right
+.arrow-right {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid $color-secondary;
+    border-bottom: 2px solid $color-secondary;
+    right: 30px;
+    bottom: calc(50% - 15px);
+    transform: rotate(-45deg);
+    transition: all 0.2s ease-in-out;
+  }
+}

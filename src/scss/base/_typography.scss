@@ -1,0 +1,165 @@
+// Typography
+body {
+  background: $color-white;
+  color: $color-body;
+  font-family: $font-body;
+  font-size: $font-size-body; //using relative sizings
+  font-weight: 300;
+  line-height: 1.5;
+  @media (max-width: $bp-md) {
+    line-height: 1.5625;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $font-heading;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+h1,
+.h1 {
+  font-size: rem(36);
+  @media (min-width: $bp-md) {
+    font-size: rem(60);
+  }
+}
+
+h2,
+.h2 {
+  font-size: rem(30);
+  @media (min-width: $bp-md) {
+    font-size: rem(42);
+  }
+}
+
+h3,
+.h3 {
+  font-size: rem(26);
+  @media (min-width: $bp-md) {
+    font-size: rem(38);
+  }
+}
+
+h4,
+.h4 {
+  font-size: rem(22);
+  @media (min-width: $bp-md) {
+    font-size: rem(30);
+  }
+}
+
+h5,
+.h5 {
+  font-size: rem(18);
+  @media (min-width: $bp-md) {
+    font-size: rem(22);
+  }
+}
+
+h6,
+.h6 {
+  font-size: rem(16);
+  @media (min-width: $bp-md) {
+    font-size: rem(16);
+  }
+}
+
+p {
+  font-size: rem(16);
+  margin: 0 0 10px;
+}
+
+a {
+  background-color: transparent;
+  color: $color-link;
+  text-decoration: none;
+  word-wrap: break-word;
+  &:active,
+  &:focus,
+  &:hover {
+    outline: 0;
+    color: $color-link-dark;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $color-border;
+  box-sizing: content-box;
+  margin: 30px auto;
+  overflow: visible;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark,
+code {
+  background: $color-code;
+  color: $color-white;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: 2px;
+}
+
+sub {
+  bottom: 2px;
+}
+
+blockquote {
+  font-size: rem(16);
+  font-style: italic;
+  margin: 0 0 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 2px solid $color-secondary;
+  cite {
+    font-size: rem(16);
+    padding-top: 15px;
+  }
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}

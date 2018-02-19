@@ -1,0 +1,21 @@
+// PAGE
+
+
+// global containers & layouts
+.container {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media (min-width: $bp-lg) {
+    width: 1000px;
+  }
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page-wrapper {}

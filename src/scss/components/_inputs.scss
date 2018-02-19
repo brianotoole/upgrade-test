@@ -1,0 +1,75 @@
+// INPUTS
+
+// global inputs
+input,
+textarea,
+select {
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 30px 10px;
+  font-size: rem(16);
+  background: $color-white;
+  color: $color-body;
+  border: 2px solid $color-black;
+  border-radius: 0;
+  appearance: none;
+  transition: 0.2s all ease-out;
+  &:active,
+  &:focus {
+    border-color: $color-secondary;
+  }
+}
+textarea {
+  @include for-size (tablet-landscape-up) {
+    min-height: 300px;
+  }
+}
+select {
+  height: 80px;
+  font-size: rem(16);
+  border-radius: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+  background-position: 98% 58%;
+  background-repeat: no-repeat;
+}
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+  appearance: checkbox;
+}
+fieldset {
+  border: none;
+}
+label {
+  display: inline-block;
+  margin-bottom: 2px;
+  color: $color-body;
+}
+
+// placeholders
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: $color-body;
+  font-size: rem(16);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: $color-body;
+   font-size: rem(16);
+   opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: $color-body;
+   font-size: rem(16);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: $color-body;
+   font-size: rem(16);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: $color-body;
+   font-size: rem(16);
+}
