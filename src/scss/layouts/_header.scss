@@ -179,9 +179,6 @@ $translateX: 0;
   right: 15px;
   cursor: pointer;
   z-index: 9999;
-  @include for-size(phone-only) {
-    top: 26px;
-  }
   .line {
     display: block;
     position: absolute;

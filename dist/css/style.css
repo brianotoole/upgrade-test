@@ -921,9 +921,6 @@ body.nav-open {
   right: 15px;
   cursor: pointer;
   z-index: 9999; }
-  @media (max-width: 37.4375rem) {
-    .nav-toggle {
-      top: 26px; } }
   .nav-toggle .line {
     display: block;
     position: absolute;
