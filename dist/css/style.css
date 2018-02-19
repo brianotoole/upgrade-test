@@ -1198,6 +1198,8 @@ label {
     .form-loan input:focus,
     .form-loan select:focus {
       border-color: #6bbfff; }
+  .form-loan select {
+    padding-bottom: 9px; }
 
 .text-white {
   color: #fff; }
